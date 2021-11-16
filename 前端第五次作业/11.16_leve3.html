@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #lan
+    {
+        width: 1000px;
+        height: 900px;
+        margin: 0 auto;
+        background-color: pink;
+    }
+    .xiaoxi
+    {
+        width: 765px;
+        height: 90px;
+        background-color: rgb(192, 187, 231);
+        margin: 15px auto;
+        position: relative;
+        padding: 10px;
+        color: #EDEFF0;
+    }
+    #messge
+    {
+        width: 100%;
+        height: 120px;
+        border-bottom: 2px solid #6D7C8C;
+        background-color: white;
+        padding-bottom: 15px;
+    }
+    #xiaomessge
+    {
+        width: 670.8px;
+        height: 91px;
+        margin-left: 116px;
+    }
+    #messge button
+    {   
+        width: 72px;
+        height: 28px;
+        color: #FFFF;
+        position: relative;
+        top: -9px;
+        border: 1px solid #6D7C8C;
+        background-color: #6C7D8E;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        let btn = document.getElementById("btn");//获取按钮对象
+        let xiaoms = document.getElementById("xiaomessge");//获取文本对象
+        let lan = document.getElementById("lan");//获取栏对象
+        btn.onmousedown = function()
+        {  
+           btn.style.backgroundColor = "#37414b" 
+        }
+        btn.onmouseup = function()
+        {
+            btn.style.backgroundColor = "#6C7D8E";
+            if(xiaoms.value=='')
+            {
+                alert("文本内容不能为空");
+            }
+            else
+            {
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("xiaoxi");
+                newDiv.innerText = xiaoms.value;
+                lan.append(newDiv);
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="lan">
+        <div id="messge">
+            <textarea name="item" id="xiaomessge" cols="30" rows="10"></textarea>
+            <button id="btn">发送</button>
+        </div>
+        <div class="xiaoxi">
+            我是第一个留言哈哈哈哈
+        </div>
+    </div>
+</body>
+</html>
